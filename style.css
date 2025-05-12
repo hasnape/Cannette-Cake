@@ -14,35 +14,53 @@ body {
   margin: 0 100px 0 100px;
 }
 
+@media (max-width: 1200px) {
+  body {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0 5px;
+  }
+}
+
 h1,
 h2,
 h3 {
-      font-weight: 600;
-        text-align: center;
-        padding-bottom: 20px;
-      }
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 20px;
+}
 
-.flavor-item img {
+.flavor-item img,
+.img-3d {
   border-radius: 50px / 30px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.23), 0 1.5px 3px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
-  /* Optionnel : masque pour effet bombé */
   background: linear-gradient(120deg, rgba(255, 255, 255, 0.13) 0%, transparent 70%);
+  width: 191px;
+  height: 437px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .flavor-item img,
+  .img-3d {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
 }
 
 .img-3d:hover {
   transform: scale(1.04) rotateY(6deg);
   transition: transform 0.3s cubic-bezier(.4, 2, .6, 1);
-}
-
-.img-3d {
-  border-radius: 50px / 30px;
-  /* courbure ovale */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 1.5px 3px rgba(0, 0, 0, 0.15);
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
 }
 
 .img-3d::before {
@@ -62,8 +80,8 @@ p {
 }
 
 section {
-      padding: 30px 10px;
-        text-align: center;
+  padding: 30px 10px;
+  text-align: center;
 }
 
 section:not(.accueil):not(.menu) {
@@ -75,12 +93,28 @@ section:not(.accueil):not(.menu) {
   border-radius: 32px;
   box-shadow: 0 8px 32px rgba(233, 64, 87, 0.07);
   position: relative;
+  max-width: 1100px;
+  width: 100%;
 }
 
+@media (max-width: 900px) {
+  section:not(.accueil):not(.menu) {
+    padding: 10px 10px;
+    border-radius: 20px;
+    margin: 30px 0;
+  }
+}
 
+@media (max-width: 600px) {
+  section:not(.accueil):not(.menu) {
+    padding: 5px 2px;
+    border-radius: 10px;
+    margin: 15px 0;
+  }
+}
 
 section:not(.accueil):not(.menu) h2 {
-  font-size: 2.4em;
+  font-size: 2em;
   color: #E94057;
   margin-bottom: 30px;
   border-bottom: 3px solid #E94057;
@@ -118,31 +152,36 @@ ul li::before {
 
 /* === HEADER === */
 header {
-      background: #fff;
-        padding: 3px 0px;
-        position: fixed;
-        top: 0;
-        width: 89.50%;
-        z-index: 1000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid #f0f0f0;
-        flex-direction: column;
+  background: #fff;
+  padding: 3px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  flex-direction: row;
+  min-height: 70px;
 }
 
 .logo {
   font-family: 'Pacifico', cursive;
   font-size: 1.5em;
   color: #E94057;
-  margin: 15px 0px 0px 0px;
+  margin: 15px 0px 0px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 25px;
-  margin: 20px 0px 0px 0px;
+  margin: 20px 20px 0px 0px;
 }
 
 nav a {
@@ -166,16 +205,16 @@ nav a:hover {
 
 /* === SECTION ACCUEIL AVEC CAROUSEL À GAUCHE === */
 .accueil {
-    background: linear-gradient(135deg, #FF8A00, #E52E71);
-      color: #fff;
-      padding-top: 0rem;
-      padding-bottom: 1rem;
-      border-radius: 32px;
-      margin-top: 126px;
+  background: linear-gradient(135deg, #FF8A00, #E52E71);
+  color: #fff;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  border-radius: 32px;
+  margin-top: 126px;
 }
 
 .accueil-flex {
-display: flex;
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -233,7 +272,6 @@ display: flex;
   from {
     transform: rotateY(0deg);
   }
-
   to {
     transform: rotateY(-360deg);
   }
@@ -252,33 +290,41 @@ display: flex;
   margin: 40px 0;
 }
 
-.flavor-item {
-      background: #ffffff;
-        border: 1px solid #120101;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 502px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.flavor-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.flavor-item img {
-    width: 191px;
-      height: 437px;
-      object-fit: cover;
-      border-radius: 75px;
-      display: block;
-      margin: 0 auto 10px;
+@media (max-width: 900px) {
+  .flavors {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
   }
+}
+@media (max-width: 600px) {
+  .flavors {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 20px 0;
+  }
+}
+
+.flavor-item {
+  background: #ffffff;
+  border: 1px solid #120101;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 502px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .flavor-item {
+    min-height: 0;
+    padding: 10px 2px;
+  }
+}
 
 .flavor-item h3 {
   font-size: 1.3em;
@@ -326,24 +372,22 @@ display: flex;
 
 /* === NOUVEAU : STYLES POUR .mon-bouton === */
 .mon-bouton {
-    background: linear-gradient(135deg, #E94057, #FF8A00);
-      color: #fff !important;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-size: 1.1em;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.4s ease, transform 0.2s ease;
-      display: inline-block;
-      text-decoration: none;
-      margin-top: 1rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      font-family: inherit;
-      margin-top: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  background: linear-gradient(135deg, #E94057, #FF8A00);
+  color: #fff !important;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 45px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+  align-items: center;
+  justify-content: center;
 }
 
 .mon-bouton:hover {
@@ -356,9 +400,18 @@ display: flex;
   transform: scale(0.98);
 }
 
+@media (max-width: 600px) {
+  .mon-bouton {
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+}
+
 /* === CONTACT FORM === */
 #contactForm {
-  max-width: 1500px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: left;
   background: #fff;
@@ -396,6 +449,14 @@ display: flex;
   box-shadow: 0 0 0 3px rgba(233, 64, 87, 0.2);
 }
 
+@media (max-width: 600px) {
+  #contactForm {
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+
+/* === AUTRES SECTIONS === */
 #apropos p,
 #b2b p,
 #canaux p,
@@ -416,22 +477,33 @@ display: flex;
   transition: all 0.6s ease-out;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .accueil-flex {
+/* === RESPONSIVE HEADER/NAV === */
+@media (max-width: 900px) {
+  header {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    padding: 10px 0;
   }
-
-  .accueil-text {
-    text-align: center;
+  .logo {
+    margin: 10px 0 0 10px;
   }
-
-  .carousel-container-3d {
-    margin-top: 20px;
+  nav ul {
+    gap: 10px;
+    margin: 10px 0 0 0;
   }
+}
 
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+    min-height: 0;
+  }
+  .logo {
+    margin: 5px 0 0 10px;
+    font-size: 1.2em;
+  }
   nav ul {
     display: none;
     flex-direction: column;
@@ -444,18 +516,40 @@ display: flex;
     border-radius: 4px;
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
   }
-
   nav ul li a {
     display: block;
     padding: 10px 20px;
   }
-
   .nav-toggle {
     display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
+}
 
-  header {
-    padding: 10px;
+@media (max-width: 600px) {
+  .accueil-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 10px 0;
+  }
+  .accueil-text {
+    text-align: center;
+  }
+  .carousel-container-3d {
+    margin-top: 20px;
+    min-width: unset;
+    max-width: 100%;
+  }
+  .carousel-3d,
+  .carousel-3d__face {
+    width: 90vw;
+    max-width: 320px;
+    height: auto;
   }
 }
