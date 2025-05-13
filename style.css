@@ -1135,13 +1135,6 @@ display: flex;
     border-radius: 12px;
     
   }
-@keyframes rotateCarousel {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
 }
 
 .carousel-3d {
