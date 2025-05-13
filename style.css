@@ -1059,6 +1059,7 @@ display: flex;
         text-align: center;
         gap: 30px;
         padding: 10px 0;
+       width:100%;
       }
   
       .accueil-text {
@@ -1134,6 +1135,20 @@ display: flex;
     border-radius: 12px;
     
   }
+@keyframes rotateCarousel {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
 
+.carousel-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: rotateCarousel 20s linear infinite; /* Tourne sur 20 secondes */
+  position: relative;
+}
   
 }
