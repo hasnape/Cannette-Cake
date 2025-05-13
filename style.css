@@ -1102,10 +1102,9 @@ display: flex;
     padding: 10px;
   }
 }
-
 @media (max-width: 600px) {
   .carousel-container-3d {
-    height: 320px !important;
+    height: 300px !important;
     min-width: unset;
     max-width: 100%;
     margin: 0 auto;
@@ -1118,7 +1117,6 @@ display: flex;
     width: 90vw !important;
     max-width: 320px !important;
     height: 320px !important;
-    /* <-- Fixe la hauteur */
     min-height: 220px !important;
     margin: 0 auto;
   }
@@ -1127,21 +1125,27 @@ display: flex;
     width: 90vw !important;
     max-width: 285px !important;
     height: 304px !important;
-    /* <-- Fixe la hauteur */
     min-height: 180px !important;
     position: absolute;
     background-size: cover;
     background-position: center;
     border-radius: 12px;
-    
   }
 }
 
+/* Animation rotation pour .carousel-3d */
 .carousel-3d {
   perspective: 1000px;
   transform-style: preserve-3d;
   animation: rotateCarousel 20s linear infinite; /* Tourne sur 20 secondes */
   position: relative;
 }
-  
+
+@keyframes rotateCarousel {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
