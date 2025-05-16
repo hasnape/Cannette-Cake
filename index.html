@@ -7,19 +7,17 @@
     <title>Pause Sucrée – Cake Cannette</title>
     <meta name="description"
         content="Cake Cannette - un gâteau en canette par Pause Sucrée : le dessert innovant, ludique et délicieux qui fait sensation. Découvrez nos saveurs, notre concept et comment commander.">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap supprimé -->
 </head>
 
 <body>
 
     <header>
-        
+
         <div class="logo">Pause Sucrée TR – <span>Cannette Cake</span></div>
         <nav>
             <ul id="navList">
@@ -61,6 +59,7 @@
                     <a href="#menu" class="mon-bouton">Je veux goûter !</a>
                 </div>
             </div>
+            
         </section>
 
         <section id="menu" class="menu hidden">
@@ -155,6 +154,42 @@
                 nouveaux points de vente près de chez vous&nbsp;! *</p>
         </section>
 
+        <section id="commande" class="commande hidden">
+            <h2>Commander vos Cannettes Cake</h2>
+            <p id="prixInfo"
+                data-default="Remplissez ce formulaire pour passer votre commande. Tarif : <strong>5€ par unité</strong> pour les particuliers.">
+                Remplissez ce formulaire pour passer votre commande. Tarif : <strong>5€ par unité</strong> pour les particuliers.
+            </p>
+        
+            <form id="commandeForm" action="https://formspree.io/f/TON_ID_FORMSPREE" method="POST">
+                <div class="form-group">
+                    <label for="nomCommande">Nom complet :</label>
+                    <input type="text" id="nomCommande" name="nomCommande" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="emailCommande">E-mail :</label>
+                    <input type="email" id="emailCommande" name="emailCommande" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="quantite">Quantité souhaitée :</label>
+                    <input type="number" id="quantite" name="quantite" min="1" value="1" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="siret">Numéro SIRET (facultatif) :</label>
+                    <input type="text" id="siret" name="siret" placeholder="Pour bénéficier du tarif pro">
+                </div>
+        
+                <div class="form-group">
+                    <p><strong>Total estimé :</strong> <span id="prixTotal">5 €</span></p>
+                </div>
+        
+                <button type="submit" class="mon-bouton">Valider la commande</button>
+            </form>
+        </section>
+
         <section id="faq" class="faq hidden">
             <h2>FAQ</h2>
             <div class="question">
@@ -175,8 +210,8 @@
             </div>
             <div class="question">
                 <h3>La canette est-elle recyclable&nbsp;?</h3>
-                <p>Absolument. Nos canettes sont en aluminium 100% recyclable. Après vous être régalé, pensez à donner
-                    une seconde vie à l'emballage en le déposant dans le bac de tri&nbsp;!</p>
+                <p>Absolument. Nos canettes sont 100% recyclable. Après vous être régalé, pensez à donner
+                    une seconde vie à l'emballage en le déposant dans le bac de tri ou commme décoration &nbsp;!</p>
             </div>
             <div class="question">
                 <h3>Proposez-vous des options sans gluten ou vegan&nbsp;?</h3>
